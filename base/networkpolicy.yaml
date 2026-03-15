@@ -1,0 +1,90 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-services
+  namespace: nextcloud
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/instance: nextcloud
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/instance: nextcloud
+    ports:
+    - protocol: TCP
+      port: 3306
+    - port: 15008
+      protocol: TCP
+  - from:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/instance: nextcloud
+    ports:
+    - protocol: TCP
+      port: 6379
+    - port: 15008
+      protocol: TCP
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: mariadb
+    ports:
+    - port: 3306
+      protocol: TCP
+    - port: 15008
+      protocol: TCP
+  - to:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: redis
+    ports:
+    - port: 6379
+      protocol: TCP
+    - port: 15008
+      protocol: TCP
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-traefik
+  namespace: nextcloud
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/instance: nextcloud
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: traefik
+    ports:
+    - port: 80
+      protocol: TCP
+    - port: 15008
+      protocol: TCP
+#---
+#apiVersion: networking.k8s.io/v1
+#kind: NetworkPolicy
+#metadata:
+#  name: allow-all
+#  namespace: nextcloud
+#spec:
+#  podSelector:
+#    matchLabels:
+#      app.kubernetes.io/instance: nextcloud
+#  policyTypes:
+#  - Ingress
+#  - Egress
+#  ingress:
+#  - {}
+#  egress:
+#  - {}#
