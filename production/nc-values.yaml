@@ -18,12 +18,18 @@ spec:
         sectionName: websecure
         namespace: traefik
     nextcloud:
+      host: nextcloud.kube.home
       trustedDomains:
         - localhost
         - nextcloud.kube.home
         - files.pipenberg.eu
+      persistence:
     persistence:
-      enabled: true
+        enabled: true
+        nextcloudData:
+          enabled: true
+          accessMode: ReadWriteOnce
+          size: 8Gi
     internalDatabase:
       enabled: false
     mariadb:
