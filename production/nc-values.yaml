@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: ">=9.0.0"
+      version: ">=9.0.0 <10.0.0"
   values:
     replicaCount: 1
     httpRoute:
@@ -33,3 +33,6 @@ spec:
           enabled: true
     redis:
       enabled: true
+      master:
+        persistence:
+          enabled: true
