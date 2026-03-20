@@ -47,6 +47,7 @@ spec:
           enabled: true
     redis:
       auth:
+        enabled: true
         existingSecret: "redis-credentials"
         existingSecretPasswordKey: "redis-password"
       enabled: true
