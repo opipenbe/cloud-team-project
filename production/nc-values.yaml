@@ -25,6 +25,9 @@ spec:
       trustedDomains:
         - nextcloud.kube.home
         - files.pipenberg.eu
+      existingSecret: "nextcloud-credentials"
+      usernameKey: nextcloud-username
+      passwordKey: nextcloud-password
       persistence:
     persistence:
         enabled: true
@@ -36,10 +39,14 @@ spec:
       enabled: false
     mariadb:
       enabled: true
+      auth:
+        existingSecret: "mariadb-credentials"
       primary:
         persistence:
           enabled: true
     redis:
+      existingSecret: "redis"
+      existingSecretPasswordKey: "redis-credentials"
       enabled: true
       master:
         persistence:
