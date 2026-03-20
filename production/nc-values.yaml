@@ -17,10 +17,12 @@ spec:
       - name: infra-gateway
         sectionName: websecure
         namespace: traefik
+    phpClientHttpsFix:
+      enabled: true
+      protocol: https
     nextcloud:
       host: nextcloud.kube.home
       trustedDomains:
-        - localhost
         - nextcloud.kube.home
         - files.pipenberg.eu
       persistence:
