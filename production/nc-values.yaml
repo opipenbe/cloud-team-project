@@ -38,13 +38,19 @@ spec:
           size: 8Gi
     internalDatabase:
       enabled: false
+    externalDatabase:
+      enabled: true
+      type: mariadb
+      existingSecret:
+        enabled: true
+        secretName: "mariadb-credentials"
+        usernameKey: mariadb-username
+        passwordKey: mariadb-password
     mariadb:
       enabled: true
       auth:
         existingSecret: "mariadb-credentials"
         database: nextcloud
-        username: ""
-        password: ""
       primary:
         persistence:
           enabled: true
