@@ -29,7 +29,6 @@ spec:
         enabled: true
         usernameKey: nextcloud-username
         passwordKey: nextcloud-password
-      persistence:
     persistence:
         enabled: true
         nextcloudData:
