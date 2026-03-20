@@ -46,8 +46,9 @@ spec:
         persistence:
           enabled: true
     redis:
-      existingSecret: "redis-credentials"
-      existingSecretPasswordKey: "redis-password"
+      auth:
+        existingSecret: "redis-credentials"
+        existingSecretPasswordKey: "redis-password"
       enabled: true
       master:
         persistence:
