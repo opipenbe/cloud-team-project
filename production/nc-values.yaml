@@ -69,10 +69,10 @@ spec:
       mariaDbInitContainer:
         resources:
           limits:
-          memory: 128Mi
+            memory: 128Mi
           requests:
-          cpu: 100m
-          memory: 128Mi
+            cpu: 100m
+            memory: 128Mi
     redis:
       auth:
         enabled: true
