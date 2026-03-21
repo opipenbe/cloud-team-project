@@ -8,6 +8,12 @@ spec:
     spec:
       version: ">=9.0.0 <10.0.0"
   values:
+    resources:
+      limits:
+       memory: 128Mi
+      requests:
+       cpu: 100m
+       memory: 128Mi
     replicaCount: 1
     httpRoute:
       enabled: true
@@ -60,6 +66,13 @@ spec:
       primary:
         persistence:
           enabled: true
+      mariaDbInitContainer:
+        resources:
+          limits:
+          memory: 128Mi
+          requests:
+          cpu: 100m
+          memory: 128Mi
     redis:
       auth:
         enabled: true
