@@ -3,6 +3,7 @@ kind: HelmRelease
 metadata:
   name: nextcloud
   namespace: nextcloud
+timeout: 15m
 spec:
   chart:
     spec:
