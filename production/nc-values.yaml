@@ -37,11 +37,11 @@ spec:
         secretName: nextcloud-credentials
         usernameKey: nextcloud-username
         passwordKey: nextcloud-password
-      podSecurityContext:
-        runAsUser: 33
-        runAsGroup: 33
-        runAsNonRoot: true
-        readOnlyRootFilesystem: true
+      #podSecurityContext:
+      #  runAsUser: 33
+      #  runAsGroup: 33
+      #  runAsNonRoot: true
+      #  readOnlyRootFilesystem: true
     persistence:
         enabled: true
         nextcloudData:
