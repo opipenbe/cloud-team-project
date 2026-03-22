@@ -54,7 +54,7 @@ spec:
         usernameKey: mariadb-username
         passwordKey: mariadb-password
     externalRedis:
-      enabled: true
+      enabled: false
       existingSecret:
         enabled: true
         secretName: "redis-credentials"
@@ -79,7 +79,7 @@ spec:
         enabled: true
         existingSecret: "redis-credentials"
         existingSecretPasswordKey: "redis-password"
-      enabled: true
+      enabled: false
       master:
         persistence:
           enabled: true
