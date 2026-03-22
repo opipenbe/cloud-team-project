@@ -44,7 +44,7 @@ spec:
           accessMode: ReadWriteOnce
           size: 8Gi
     internalDatabase:
-      enabled: false
+      enabled: true
     externalDatabase:
       enabled: true
       type: mariadb
@@ -79,7 +79,7 @@ spec:
         enabled: true
         existingSecret: "redis-credentials"
         existingSecretPasswordKey: "redis-password"
-      enabled: false
+      enabled: true
       master:
         persistence:
           enabled: true
