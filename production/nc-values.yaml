@@ -29,8 +29,8 @@ spec:
       enabled: true
       protocol: https
     nextcloud:
-      #host: files.pipenberg.eu
-      host: nextcloud.kube.home
+      host: files.pipenberg.eu
+      #host: nextcloud.kube.home
       trustedDomains:
         - nextcloud.kube.home
         - files.pipenberg.eu
