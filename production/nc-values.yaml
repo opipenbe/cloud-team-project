@@ -72,12 +72,12 @@ spec:
         capabilities:
           drop:
             - ALL
-      mariaDbInitContainer:
-        securityContext:
-          runAsUser: 33
-          runAsGroup: 33
-          runAsNonRoot: true
-          readOnlyRootFilesystem: true
+      #mariaDbInitContainer:
+      #  securityContext:
+      #    runAsUser: 33
+      #    runAsGroup: 33
+      #    runAsNonRoot: true
+      #    readOnlyRootFilesystem: true
     persistence:
         enabled: true
         nextcloudData:
