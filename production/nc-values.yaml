@@ -41,7 +41,7 @@ spec:
         runAsUser: 33
         runAsGroup: 33
         runAsNonRoot: true
-        readOnlyRootFilesystem: true
+        readOnlyRootFilesystem: false
       mariaDbInitContainer:
         securityContext:
           runAsUser: 33
@@ -90,7 +90,7 @@ spec:
         enabled: true
         existingSecret: "redis-credentials"
         existingSecretPasswordKey: "redis-password"
-      enabled: false
+      enabled: true
       master:
         persistence:
           enabled: true
