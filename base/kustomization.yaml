@@ -5,3 +5,4 @@ resources:
   - nc-repository.yaml
   - nc-release.yaml
   - networkpolicy.yaml
+  - istio-peer-authentication.yaml
