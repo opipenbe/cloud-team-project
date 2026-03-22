@@ -89,7 +89,7 @@ spec:
           accessMode: ReadWriteOnce
           size: 8Gi
     internalDatabase:
-      enabled: true
+      enabled: false
     externalDatabase:
       enabled: true
       type: mariadb
