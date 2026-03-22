@@ -24,6 +24,11 @@ spec:
       - name: infra-gateway
         sectionName: websecure
         namespace: traefik
+    securityContext:
+      runAsUser: 33
+      runAsGroup: 33
+      runAsNonRoot: true
+      readOnlyRootFilesystem: true
     phpClientHttpsFix:
       enabled: true
       protocol: https
