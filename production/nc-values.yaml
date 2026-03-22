@@ -71,7 +71,7 @@ spec:
         allowPrivilegeEscalation: false
         capabilities:
           drop:
-        - ALL
+            - ALL
       mariaDbInitContainer:
         securityContext:
           runAsUser: 33
