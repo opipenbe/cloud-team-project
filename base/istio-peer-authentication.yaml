@@ -2,7 +2,7 @@ apiVersion: security.istio.io/v1
 kind: PeerAuthentication
 metadata:
   name: default
-  namespace: shop
+  namespace: nextcloud
 spec:
   mtls:
     mode: STRICT
