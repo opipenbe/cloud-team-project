@@ -85,10 +85,10 @@ spec:
               - ALL
     persistence:
         enabled: true
-        nextcloudData:
-          enabled: true
-          accessMode: ReadWriteOnce
-          size: 8Gi
+        #nextcloudData:
+        #  enabled: true
+        #  accessMode: ReadWriteOnce
+        #  size: 8Gi
     internalDatabase:
       enabled: false
     externalDatabase:
