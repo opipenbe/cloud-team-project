@@ -11,9 +11,9 @@ spec:
   values:
     resources:
       limits:
-       memory: 128Mi
+       memory: 512Mi
       requests:
-       cpu: 100m
+       cpu: 256m
        memory: 128Mi
     replicaCount: 1
     httpRoute:
