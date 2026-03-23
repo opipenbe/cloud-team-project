@@ -60,7 +60,8 @@ spec:
           subPath: redis-session.ini
       extraVolumes:
         - name: php-confd
-          emptyDir: {}
+          emptyDir:
+            sizeLimit: 1Gi
       podSecurityContext:
         fsGroup: 33 # Without fsGroup=33 Nextcloud will crash, since it requires the data directory to be owned by the www-data user.
         runAsGroup: 33 # www-data
