@@ -68,11 +68,11 @@ spec:
       #  runAsUser: 33 # www-data
       #  seccompProfile:
       #    type: RuntimeDefault
-      #securityContext:
-      #  allowPrivilegeEscalation: false
-      #  capabilities:
-      #    drop:
-      #      - ALL
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
       mariaDbInitContainer:
         securityContext:
           runAsUser: 33
