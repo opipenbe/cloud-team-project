@@ -61,18 +61,18 @@ spec:
       extraVolumes:
         - name: php-confd
           emptyDir: {}
-      podSecurityContext:
-        fsGroup: 33 # Without fsGroup=33 Nextcloud will crash, since it requires the data directory to be owned by the www-data user.
-        runAsGroup: 33 # www-data
-        runAsNonRoot: true
-        runAsUser: 33 # www-data
-        seccompProfile:
-          type: RuntimeDefault
-      securityContext:
-        allowPrivilegeEscalation: false
-        capabilities:
-          drop:
-            - ALL
+      #podSecurityContext:
+      #  fsGroup: 33 # Without fsGroup=33 Nextcloud will crash, since it requires the data directory to be owned by the www-data user.
+      #  runAsGroup: 33 # www-data
+      #  runAsNonRoot: true
+      #  runAsUser: 33 # www-data
+      #  seccompProfile:
+      #    type: RuntimeDefault
+      #securityContext:
+      #  allowPrivilegeEscalation: false
+      #  capabilities:
+      #    drop:
+      #      - ALL
       mariaDbInitContainer:
         securityContext:
           runAsUser: 33
