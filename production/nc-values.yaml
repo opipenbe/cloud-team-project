@@ -13,21 +13,21 @@ spec:
       enabled: true
       initialDelaySeconds: 10
       periodSeconds: 10
-      timeoutSeconds: 5
+      timeoutSeconds: 25
       failureThreshold: 9
       successThreshold: 1
     readinessProbe:
       enabled: true
       initialDelaySeconds: 10
       periodSeconds: 10
-      timeoutSeconds: 5
+      timeoutSeconds: 25
       failureThreshold: 9
       successThreshold: 1
     startupProbe:
       enabled: false
       initialDelaySeconds: 30
       periodSeconds: 10
-      timeoutSeconds: 5
+      timeoutSeconds: 25
       failureThreshold: 90
       successThreshold: 1
     resources:
