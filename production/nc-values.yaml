@@ -116,7 +116,6 @@ spec:
     externalDatabase:
       enabled: true
       type: mariadb
-      #host: "db.pipenberg.eu:3306"
       existingSecret:
         enabled: true
         secretName: "mariadb-credentials"
@@ -124,12 +123,12 @@ spec:
         passwordKey: mariadb-password
         hostKey: mariadb-database-host
         databaseKey: mariadb-database
-    externalRedis:
-      enabled: false
-      existingSecret:
-        enabled: true
-        secretName: "redis-credentials"
-        passwordKey: redis-password
+    #externalRedis:
+    #  enabled: false
+    #  existingSecret:
+    #    enabled: true
+    #    secretName: "redis-credentials"
+    #    passwordKey: redis-password
     #mariadb:
     #  enabled: false
     #  auth:
@@ -146,12 +145,12 @@ spec:
     #      requests:
     #        cpu: 100m
     #        memory: 128Mi
-    redis:
-      auth:
-        enabled: true
-        existingSecret: "redis-credentials"
-        existingSecretPasswordKey: "redis-password"
-      enabled: true
-      master:
-        persistence:
-          enabled: true
+    #redis:
+    #  auth:
+    #    enabled: true
+    #    existingSecret: "redis-credentials"
+    #    existingSecretPasswordKey: "redis-password"
+    #  enabled: true
+    #  master:
+    #    persistence:
+    #      enabled: true
