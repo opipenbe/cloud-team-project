@@ -123,12 +123,12 @@ spec:
         passwordKey: mariadb-password
         hostKey: mariadb-database-host
         databaseKey: mariadb-database
-    #externalRedis:
-    #  enabled: false
-    #  existingSecret:
-    #    enabled: true
-    #    secretName: "redis-credentials"
-    #    passwordKey: redis-password
+    externalRedis:
+      enabled: true
+      existingSecret:
+        enabled: true
+        secretName: "redis-credentials"
+        passwordKey: redis-password
     #mariadb:
     #  enabled: false
     #  auth:
@@ -145,15 +145,15 @@ spec:
     #      requests:
     #        cpu: 100m
     #        memory: 128Mi
-    redis:
-      auth:
-        enabled: true
-        existingSecret: "redis-credentials"
-        existingSecretPasswordKey: "redis-password"
-      enabled: true
-      master:
-        persistence:
-          enabled: false
-      replica:
-        persistence:
-          enabled: false
+    #redis:
+    #  auth:
+    #    enabled: true
+    #    existingSecret: "redis-credentials"
+    #    existingSecretPasswordKey: "redis-password"
+    #  enabled: true
+    #  master:
+    #    persistence:
+    #      enabled: true
+    #  replica:
+    #    persistence:
+    #      enabled: true
