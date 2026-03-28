@@ -39,8 +39,6 @@ spec:
         secretName: nextcloud-credentials
         usernameKey: nextcloud-username
         passwordKey: nextcloud-password
-        hostKey: nextcloud-database-host
-        databaseKey: nextcloud-database
       # Permissions fix from: https://github.com/nextcloud/helm/issues/187#issuecomment-2674561977
       #extraInitContainers:
       #  - name: create-redis-session-ini
@@ -97,12 +95,14 @@ spec:
     externalDatabase:
       enabled: true
       type: mariadb
-      host: "db.pipenberg.eu:3306"
+      #host: "db.pipenberg.eu:3306"
       existingSecret:
         enabled: true
         secretName: "mariadb-credentials"
         usernameKey: mariadb-username
         passwordKey: mariadb-password
+        hostKey: mariadb-database-host
+        databaseKey: mariadb-database
     externalRedis:
       enabled: false
       existingSecret:
