@@ -39,6 +39,8 @@ spec:
         secretName: nextcloud-credentials
         usernameKey: nextcloud-username
         passwordKey: nextcloud-password
+        hostKey: nextcloud-database-host
+        databaseKey: nextcloud-database
       # Permissions fix from: https://github.com/nextcloud/helm/issues/187#issuecomment-2674561977
       #extraInitContainers:
       #  - name: create-redis-session-ini
