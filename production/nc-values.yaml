@@ -95,6 +95,7 @@ spec:
     externalDatabase:
       enabled: true
       type: mariadb
+      host: "db.pipenberg.eu:3306"
       existingSecret:
         enabled: true
         secretName: "mariadb-credentials"
@@ -106,22 +107,22 @@ spec:
         enabled: true
         secretName: "redis-credentials"
         passwordKey: redis-password
-    mariadb:
-      enabled: true
-      auth:
-        existingSecret: "mariadb-credentials"
-        database: nextcloud
-      primary:
-        persistence:
-          enabled: true
-      mariaDbInitContainer:
-        resources:
-          limits:
-            memory: 128Mi
-            cpu: 100m
-          requests:
-            cpu: 100m
-            memory: 128Mi
+    #mariadb:
+    #  enabled: false
+    #  auth:
+    #    existingSecret: "mariadb-credentials"
+    #    database: nextcloud
+    #  primary:
+    #    persistence:
+    #      enabled: true
+    #  mariaDbInitContainer:
+    #    resources:
+    #      limits:
+    #        memory: 128Mi
+    #        cpu: 100m
+    #      requests:
+    #        cpu: 100m
+    #        memory: 128Mi
     redis:
       auth:
         enabled: true
