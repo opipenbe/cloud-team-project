@@ -31,14 +31,16 @@ spec:
       protocol: TCP
   egress:
   - to:
-    - podSelector:
-        matchLabels:
-          app.kubernetes.io/name: mariadb
+    #- podSelector:
+    #    matchLabels:
+    #      app.kubernetes.io/name: mariadb
+    - ipBlock:
+        cidr: 192.168.150.33/32
     ports:
     - port: 3306
       protocol: TCP
-    - port: 15008
-      protocol: TCP
+    #- port: 15008
+    #  protocol: TCP
   - to:
     - podSelector:
         matchLabels:
