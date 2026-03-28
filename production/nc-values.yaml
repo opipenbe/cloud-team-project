@@ -125,6 +125,8 @@ spec:
         databaseKey: mariadb-database
     externalRedis:
       enabled: true
+      host: "redis.pipenberg.eu"
+      port: "6379"
       existingSecret:
         enabled: true
         secretName: "redis-credentials"
