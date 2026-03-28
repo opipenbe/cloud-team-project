@@ -9,13 +9,34 @@ spec:
     spec:
       version: ">=9.0.0 <10.0.0"
   values:
+    livenessProbe:
+      enabled: true
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 9
+      successThreshold: 1
+    readinessProbe:
+      enabled: true
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 9
+      successThreshold: 1
+    startupProbe:
+      enabled: false
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 90
+      successThreshold: 1
     resources:
       limits:
-       memory: 512Mi
-       cpu: 256m
+       memory: 1024Mi
+       cpu: 2048m
       requests:
-       cpu: 256m
-       memory: 128Mi
+       cpu: 1024m
+       memory: 512Mi
     replicaCount: 1
     httpRoute:
       enabled: true
@@ -88,7 +109,7 @@ spec:
               - ALL
     persistence:
         enabled: true
-        accessMode: ReadWriteOnce
+        accessMode: ReadWriteMany
         size: 8Gi
     internalDatabase:
       enabled: false
