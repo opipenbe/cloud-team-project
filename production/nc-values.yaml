@@ -37,7 +37,7 @@ spec:
       requests:
        cpu: 1024m
        memory: 512Mi
-    replicaCount: 1
+    replicaCount: 2
     httpRoute:
       enabled: true
       hostnames:
