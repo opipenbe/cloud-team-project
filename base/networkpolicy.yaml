@@ -42,14 +42,16 @@ spec:
     #- port: 15008
     #  protocol: TCP
   - to:
-    - podSelector:
-        matchLabels:
-          app.kubernetes.io/name: redis
+    #- podSelector:
+    #    matchLabels:
+    #      app.kubernetes.io/name: redis
+    - ipBlock:
+        cidr: 192.168.150.79/32
     ports:
     - port: 6379
       protocol: TCP
-    - port: 15008
-      protocol: TCP
+    #- port: 15008
+    #  protocol: TCP
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
