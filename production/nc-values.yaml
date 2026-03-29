@@ -32,11 +32,11 @@ spec:
       successThreshold: 1
     resources:
       limits:
-       memory: 1024Mi
-       cpu: 2048m
+        memory: 1024Mi
+        cpu: 2048m
       requests:
-       cpu: 1024m
-       memory: 512Mi
+        cpu: 1024m
+        memory: 512Mi
     replicaCount: 2
     httpRoute:
       enabled: true
@@ -51,7 +51,6 @@ spec:
       protocol: https
     nextcloud:
       host: files.pipenberg.eu
-      #host: nextcloud.kube.home
       trustedDomains:
         - nextcloud.kube.home
         - files.pipenberg.eu
