@@ -22,7 +22,7 @@ spec:
                   operator: In
                   values:
                     - app
-            topologyKey: kubernetes.io/hostname
+            topologyKey: topology.kubernetes.io/zone
     livenessProbe:
       enabled: true
       initialDelaySeconds: 10
