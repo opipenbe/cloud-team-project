@@ -9,6 +9,11 @@ spec:
     spec:
       version: ">=9.0.0 <10.0.0"
   values:
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 0
     affinity:
       podAntiAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
