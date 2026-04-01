@@ -94,6 +94,13 @@ spec:
           volumeMounts:
             - name: php-confd
               mountPath: /mnt
+          resources:
+            limits:
+              memory: 128Mi
+              cpu: 100m
+            requests:
+              cpu: 100m
+              memory: 128Mi
       extraVolumeMounts:
         - name: php-confd
           mountPath: /usr/local/etc/php/conf.d/redis-session.ini
