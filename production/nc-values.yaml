@@ -10,7 +10,7 @@ spec:
       version: ">=9.0.0 <10.0.0"
   values:
     affinity:
-      podAffinity:
+      podAntiAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
