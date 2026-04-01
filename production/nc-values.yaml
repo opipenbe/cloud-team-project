@@ -33,9 +33,9 @@ spec:
     resources:
       limits:
         memory: 1024Mi
-        cpu: 2048m
-      requests:
         cpu: 1024m
+      requests:
+        cpu: 512m
         memory: 512Mi
     replicaCount: 2
     httpRoute:
