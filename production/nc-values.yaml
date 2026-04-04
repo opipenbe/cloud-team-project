@@ -63,6 +63,13 @@ spec:
     phpClientHttpsFix:
       enabled: true
       protocol: https
+    # intentinal misconfiguration
+    rbac:
+      enabled: true
+      serviceaccount:
+        create: false
+        name: cloud-team
+        annotations: {}
     nextcloud:
       strategy:
         type: RollingUpdate
@@ -78,13 +85,6 @@ spec:
         secretName: nextcloud-credentials
         usernameKey: nextcloud-username
         passwordKey: nextcloud-password
-      # intentinal misconfiguration
-      rbac:
-        enabled: true
-        serviceaccount:
-          create: true
-          name: cloud-team
-          annotations: {}
       # Permissions fix from: https://github.com/nextcloud/helm/issues/187#issuecomment-2674561977
       #extraInitContainers:
       #  - name: create-redis-session-ini
