@@ -63,7 +63,7 @@ spec:
     phpClientHttpsFix:
       enabled: true
       protocol: https
-    # intentinal misconfiguration
+    # intentional misconfiguration
     rbac:
       enabled: true
       serviceaccount:
