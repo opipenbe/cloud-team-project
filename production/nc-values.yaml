@@ -78,49 +78,56 @@ spec:
         secretName: nextcloud-credentials
         usernameKey: nextcloud-username
         passwordKey: nextcloud-password
+      # intentinal misconfiguration
+      rbac:
+        enabled: true
+        serviceaccount:
+          create: true
+          name: cloud-team
+          annotations: {}
       # Permissions fix from: https://github.com/nextcloud/helm/issues/187#issuecomment-2674561977
-      extraInitContainers:
-        - name: create-redis-session-ini
-          image: docker.io/busybox:1.36-uclibc
-          command:
-            - sh
-            - -c
-            - touch /mnt/redis-session.ini
-          securityContext:
-            allowPrivilegeEscalation: false
-            capabilities:
-              drop:
-                - ALL
-          volumeMounts:
-            - name: php-confd
-              mountPath: /mnt
-          resources:
-            limits:
-              memory: 128Mi
-              cpu: 100m
-            requests:
-              cpu: 100m
-              memory: 128Mi
-      extraVolumeMounts:
-        - name: php-confd
-          mountPath: /usr/local/etc/php/conf.d/redis-session.ini
-          subPath: redis-session.ini
-      extraVolumes:
-        - name: php-confd
-          emptyDir:
-            sizeLimit: 1Gi
-      podSecurityContext:
-        fsGroup: 33 # Without fsGroup=33 Nextcloud will crash, since it requires the data directory to be owned by the www-data user.
-        runAsGroup: 33 # www-data
-        runAsNonRoot: true
-        runAsUser: 33 # www-data
-        seccompProfile:
-          type: RuntimeDefault
-      securityContext:
-        allowPrivilegeEscalation: false
-        capabilities:
-          drop:
-            - ALL
+      #extraInitContainers:
+      #  - name: create-redis-session-ini
+      #    image: docker.io/busybox:1.36-uclibc
+      #    command:
+      #      - sh
+      #      - -c
+      #      - touch /mnt/redis-session.ini
+      #    securityContext:
+      #      allowPrivilegeEscalation: false
+      #      capabilities:
+      #        drop:
+      #          - ALL
+      #    volumeMounts:
+      #      - name: php-confd
+      #        mountPath: /mnt
+      #    resources:
+      #      limits:
+      #        memory: 128Mi
+      #        cpu: 100m
+      #      requests:
+      #        cpu: 100m
+      #        memory: 128Mi
+      #extraVolumeMounts:
+      #  - name: php-confd
+      #    mountPath: /usr/local/etc/php/conf.d/redis-session.ini
+      #    subPath: redis-session.ini
+      #extraVolumes:
+      #  - name: php-confd
+      #    emptyDir:
+      #      sizeLimit: 1Gi
+      #podSecurityContext:
+      #  fsGroup: 33 # Without fsGroup=33 Nextcloud will crash, since it requires the data directory to be owned by the www-data user.
+      #  runAsGroup: 33 # www-data
+      #  runAsNonRoot: true
+      #  runAsUser: 33 # www-data
+      #  seccompProfile:
+      #    type: RuntimeDefault
+      #securityContext:
+      #  allowPrivilegeEscalation: false
+      #  capabilities:
+      #    drop:
+      #      - ALL
       # end of permissions fix
       mariaDbInitContainer:
         securityContext:
