@@ -128,7 +128,7 @@ spec:
         capabilities:
           drop:
             - ALL
-       end of permissions fix
+      # end of permissions fix
       mariaDbInitContainer:
         securityContext:
           runAsUser: 33
